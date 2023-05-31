@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicPro", "ClinicPro\ClinicPro.csproj", "{E36B97E4-5752-4F74-99B3-7E50C287CB0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicProWebApi", "ClinicProWebApi\ClinicProWebApi.csproj", "{0382E8AA-FA92-4D6A-A3EC-B7D68804B026}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E36B97E4-5752-4F74-99B3-7E50C287CB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E36B97E4-5752-4F74-99B3-7E50C287CB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E36B97E4-5752-4F74-99B3-7E50C287CB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E36B97E4-5752-4F74-99B3-7E50C287CB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0382E8AA-FA92-4D6A-A3EC-B7D68804B026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0382E8AA-FA92-4D6A-A3EC-B7D68804B026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0382E8AA-FA92-4D6A-A3EC-B7D68804B026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0382E8AA-FA92-4D6A-A3EC-B7D68804B026}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A94F1B09-1BAC-4F55-8852-AA83742ABAAB}
+	EndGlobalSection
+EndGlobal
