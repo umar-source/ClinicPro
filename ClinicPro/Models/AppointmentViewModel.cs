@@ -1,18 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ClinicProWebApi.Models
+namespace ClinicPro.Models
 {
-    public class Appointment
+    public class AppointmentViewModel
     {
         public int AppointmentId { get; set; }
 
         [Display(Name = "Patient Name")]
-        [Required]
+        [Required(ErrorMessage = "The {0} field is required.")]
         [StringLength(100, ErrorMessage = "The {0} field must be between {2} and {1} characters long.", MinimumLength = 2)]
         public string? PatientName { get; set; }
 
         [Display(Name = "Appointment Date")]
-        [Required]
+        [Required(ErrorMessage = "The {0} field is required.")]
         [DataType(DataType.DateTime)]
         public DateTime AppointmentDate { get; set; }
 
@@ -28,10 +28,6 @@ namespace ClinicProWebApi.Models
         [StringLength(500, ErrorMessage = "The {0} field cannot exceed {1} characters.")]
         public string? Reason { get; set; }
 
-        public virtual Patient? Patient { get; set; }
-
-
-        public virtual Doctor? Doctor { get; set; }
     }
     public enum AppointmentType
     {
@@ -45,5 +41,6 @@ namespace ClinicProWebApi.Models
         DiagnosticTest,
 
         // Add more appointment types as needed
-    }
+    
+}
 }

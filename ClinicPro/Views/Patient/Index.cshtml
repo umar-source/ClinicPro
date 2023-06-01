@@ -1,0 +1,48 @@
+﻿@model List<PatientViewModel>
+
+<div >
+    <a asp-action="Create" class="btn btn-secondary   text-white">Create Patient</a>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Contact Number</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Postal Code</th>
+            <th>Insurance Provider</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model)
+        {
+            <tr>
+                <td>@patient.FullName</td>
+                <td>@patient.Gender</td>
+                <td>@patient.DateOfBirth.ToShortDateString()</td>
+                <td>@patient.ContactNumber</td>
+                <td>@patient.Email</td>
+                <td>@patient.Address</td>
+                <td>@patient.City</td>
+                <td>@patient.PostalCode</td>
+                <td>@patient.InsuranceProvider</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@patient.PatientId" class="btn btn-info">Edit</a>
+                   
+                </td>
+                <td>
+                    <a href="@Url.Action("Delete", "Patient", new { id = patient.PatientId })" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this patient?')">Delete</a>
+                </td>
+                <td>
+                    <a href="@Url.Action("Details", "Patient", new { id = patient.PatientId })" class="btn btn-info">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

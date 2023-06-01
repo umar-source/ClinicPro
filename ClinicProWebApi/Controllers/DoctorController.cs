@@ -88,11 +88,11 @@ namespace ClinicProWebApi.Controllers
 
 
 
-        [HttpPut("{Id}")]
-        public IActionResult UpdateProduct(int Id, [FromBody] Doctor doctor)
+        [HttpPut]
+        public IActionResult UpdateDoctor(int Id, [FromBody] Doctor doctor)
         {
 
-            var p = _unitOfWork.DoctorRepo.GetById(Id);
+            var p = _unitOfWork.DoctorRepo.GetById(doctor.DoctorId);
             if (p == null)
             {
                 return NotFound();

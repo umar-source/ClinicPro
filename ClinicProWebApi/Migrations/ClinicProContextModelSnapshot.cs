@@ -185,7 +185,7 @@ namespace ClinicProWebApi.Migrations
 
             modelBuilder.Entity("ClinicProWebApi.Models.Appointment", b =>
                 {
-                    b.HasOne("ClinicProWebApi.Models.Doctor", null)
+                    b.HasOne("ClinicProWebApi.Models.Doctor", "Doctor")
                         .WithMany("Appointments")
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -194,6 +194,8 @@ namespace ClinicProWebApi.Migrations
                     b.HasOne("ClinicProWebApi.Models.Patient", "Patient")
                         .WithMany("Appointments")
                         .HasForeignKey("PatientId");
+
+                    b.Navigation("Doctor");
 
                     b.Navigation("Patient");
                 });

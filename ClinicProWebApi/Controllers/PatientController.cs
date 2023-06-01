@@ -1,6 +1,5 @@
 ﻿using ClinicProWebApi.Models;
 using ClinicProWebApi.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClinicProWebApi.Controllers
@@ -20,12 +19,19 @@ namespace ClinicProWebApi.Controllers
         [HttpGet]
         public IActionResult GetAllPatient()
         {
-            var patient = _unitOfWork.PatientRepo.GetAll();
-            if (patient == null)
+            try
             {
-                return NotFound();
+                var patient = _unitOfWork.PatientRepo.GetAll();
+                if (patient == null)
+                {
+                    return NotFound("Zero Patients");
+                }
+                return Ok(patient);
             }
-            return Ok(patient);
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         /*
@@ -91,11 +97,11 @@ namespace ClinicProWebApi.Controllers
 
 
 
-        [HttpPut("{Id}")]
-        public IActionResult UpdatePatient(int Id, [FromBody] Patient patient)
+        [HttpPut]
+        public IActionResult UpdatePatient( [FromBody] Patient patient)
         {
 
-            var p = _unitOfWork.PatientRepo.GetById(Id);
+            var p = _unitOfWork.PatientRepo.GetById(patient.PatientId);
             if (p == null)
             {
                 return NotFound();

@@ -88,11 +88,11 @@ namespace ClinicProWebApi.Controllers
 
 
 
-        [HttpPut("{Id}")]
+        [HttpPut]
         public IActionResult UpdateDepartment(int Id, [FromBody] Department department)
         {
 
-            var d = _unitOfWork.DepartmentRepo.GetById(Id);
+            var d = _unitOfWork.DepartmentRepo.GetById(department.DepartmentId);
 
             if (d == null)
             {

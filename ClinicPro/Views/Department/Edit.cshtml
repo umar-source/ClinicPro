@@ -1,0 +1,47 @@
+﻿@model DepartmentViewModel
+
+
+
+<form action="Edit" method="post">
+
+    <input type="hidden" asp-for="@Model.DepartmentId" />
+
+    <div class="form-group">
+        <label for="DepartmentName">Full Name</label>
+        <input asp-for="DepartmentName" type="text" id="DepartmentName" name="DepartmentName" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.DepartmentName)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Full Name</label>
+        <input asp-for="Description" type="text" id="Description" name="Description" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Description)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="HeadOfDepartment">HeadOfDepartment</label>
+        <input asp-for="HeadOfDepartment" type="text" id="HeadOfDepartment" name="HeadOfDepartment" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.HeadOfDepartment)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="PhoneNumber">PhoneNumber</label>
+        <input asp-for="PhoneNumber" type="text" id="PhoneNumber" name="PhoneNumber" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.PhoneNumber)</span>
+    </div>
+
+
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input asp-for="Email" type="text" id="Email" name="Email" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+    </div>
+
+
+
+
+
+
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

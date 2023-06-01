@@ -1,0 +1,40 @@
+﻿@model List<AppointmentViewModel>
+
+
+<div>
+    <a asp-action="Create" class="btn btn-secondary   text-white">Create Doctor</a>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>PatientName</th>
+            <th>AppointmentDate</th>
+            <th>DoctorId</th>
+            <th>AppointmentType</th>
+            <th>Reason</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doctor in Model)
+        {
+            <tr>
+                <td>@doctor.PatientName</td>
+                <td>@doctor.AppointmentDate</td>
+                <td>@doctor.DoctorId</td>
+                <td>@doctor.AppointmentType</td>
+                <td>@doctor.Reason</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@doctor.AppointmentId" class="btn btn-info">Edit</a>
+                </td>
+                <td>
+                    <a href="@Url.Action("Delete", "Appointment" , new { id=doctor.AppointmentId })" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this appointment?')">Delete</a>
+                </td>
+                <td>
+                    <a href="@Url.Action("Details", "Appointment", new { id = doctor.AppointmentId })" class="btn btn-info">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

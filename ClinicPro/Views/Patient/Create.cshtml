@@ -1,0 +1,65 @@
+﻿@model PatientViewModel
+
+
+
+
+<form action="Create" method="post">
+    <div class="form-group">
+        <label for="FullName">Full Name</label>
+        <input asp-for="FullName"  type="text" id="FullName" name="FullName" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.FullName)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="Gender">Gender</label>
+        <select id="Gender" name="Gender" class="form-control">
+            <option value="">-- Select Gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Gender)</span>
+    </div>
+    <div class="form-group">
+        <label for="DateOfBirth">DateOfBirth</label>
+        <input asp-for="DateOfBirth" type="text" id="DateOfBirth" name="DateOfBirth" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.DateOfBirth)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="ContactNumber">ContactNumber</label>
+        <input asp-for="ContactNumber" type="text" id="DateOfBirth" name="ContactNumber" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.ContactNumber)</span>
+    </div>
+ 
+
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input asp-for="Email" type="text" id="Email" name="Email" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Email)</span>
+    </div>
+    <div class="form-group">
+        <label for="Address">Address</label>
+        <input asp-for="Address" type="text" id="DateOfBirth" name="Address" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Address)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="City">City</label>
+        <input asp-for="City" type="text" id="City" name="City" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.City)</span>
+    </div>
+    <div class="form-group">
+        <label for="PostalCode">PostalCode</label>
+        <input asp-for="PostalCode" type="text" id="PostalCode" name="PostalCode" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.PostalCode)</span>
+    </div>
+    <div class="form-group">
+        <label for="InsuranceProvider">InsuranceProvider</label>
+        <input asp-for="InsuranceProvider" type="text" id="InsuranceProvider" name="InsuranceProvider" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.InsuranceProvider)</span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

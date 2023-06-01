@@ -1,0 +1,35 @@
+﻿@model DoctorViewModel
+
+<h4>Doctor Details</h4>
+
+<div>
+    <div>
+        <h6>Full Name:</h6>
+        <p>@Model.FullName</p>
+    </div>
+
+    <div>
+        <h6>Gender:</h6>
+        <p>@Model.Gender</p>
+    </div>
+
+    <div>
+        <h6>Date of Birth:</h6>
+        <p>@Model.DateOfBirth.ToShortDateString()</p>
+    </div>
+
+    <div>
+        <h6>Contact Number:</h6>
+        <p>@Model.ContactNumber</p>
+    </div>
+
+    <div>
+        <h6>Email:</h6>
+        <p>@Model.Email</p>
+    </div>
+
+    <div>
+        <h6>Address:</h6>
+        <p>@Model.Address</p>
+    </div>
+</div>

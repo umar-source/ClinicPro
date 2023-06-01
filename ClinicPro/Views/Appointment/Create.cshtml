@@ -1,0 +1,48 @@
+﻿@model AppointmentViewModel
+
+
+
+
+<form action="Create" method="post">
+    <div class="form-group">
+        <label for="PatientName">PatientName</label>
+        <input asp-for="PatientName" type="text" id="PatientName" name="PatientName" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.PatientName)</span>
+    </div>
+    <div class="form-group">
+        <label for="AppointmentDate">AppointmentDate</label>
+        <input asp-for="AppointmentDate" type="text" id="AppointmentDate" name="AppointmentDate" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.AppointmentDate)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="DoctorId">DoctorId</label>
+        <input asp-for="DoctorId" type="text" id="DoctorId" name="DoctorId" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.DoctorId)</span>
+    </div>
+
+    <div class="form-group">
+        <label for="AppointmentType">AppointmentType</label>
+        <select id="AppointmentType" name="AppointmentType" class="form-control">
+            <option value="">-- Select AppointmentType --</option>
+            <option value="GeneralCheckup">GeneralCheckup</option>
+            <option value="SpecialistConsultation">SpecialistConsultation</option>
+            <option value="DiagnosticTest">DiagnosticTest</option>
+        </select>
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.AppointmentType)</span>
+    </div>
+
+   
+
+
+    <div class="form-group">
+        <label for="Reason">Reason</label>
+        <input asp-for="Reason" type="text" id="Reason" name="Reason" class="form-control" />
+        <span class="text-danger">@Html.ValidationMessageFor(model => model.Reason)</span>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

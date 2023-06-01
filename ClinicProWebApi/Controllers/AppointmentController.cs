@@ -85,11 +85,11 @@ namespace ClinicProWebApi.Controllers
 
 
 
-        [HttpPut("{Id}")]
-        public IActionResult UpdateAppointment(int Id, [FromBody] Appointment appointment)
+        [HttpPut]
+        public IActionResult UpdateAppointment([FromBody] Appointment appointment)
         {
 
-            var a = _unitOfWork.AppointmentRepo.GetById(Id);
+            var a = _unitOfWork.AppointmentRepo.GetById(appointment.AppointmentId);
 
             if (a == null)
             {

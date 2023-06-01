@@ -1,0 +1,50 @@
+﻿@model PatientViewModel
+
+<h4>Patient Details</h4>
+
+<div>
+    <div>
+    <h6>Full Name:</h6>
+    <p>@Model.FullName</p>
+</div>
+
+<div>
+    <h6>Gender:</h6>
+    <p>@Model.Gender</p>
+</div>
+
+<div>
+    <h6>Date of Birth:</h6>
+    <p>@Model.DateOfBirth.ToShortDateString()</p>
+</div>
+
+<div>
+    <h6>Contact Number:</h6>
+    <p>@Model.ContactNumber</p>
+</div>
+
+<div>
+    <h6>Email:</h6>
+    <p>@Model.Email</p>
+</div>
+
+<div>
+    <h6>Address:</h6>
+    <p>@Model.Address</p>
+</div>
+
+<div>
+    <h6>City:</h6>
+    <p>@Model.City</p>
+</div>
+
+<div>
+    <h6>Postal Code:</h6>
+    <p>@Model.PostalCode</p>
+</div>
+
+<div>
+    <h6>Insurance Provider:</h6>
+    <p>@Model.InsuranceProvider</p>
+</div>
+</div>

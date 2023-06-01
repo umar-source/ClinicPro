@@ -1,6 +1,14 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
+
+builder.Services.AddHttpClient("ClinicProApi", httpClient =>
+{
+    httpClient.BaseAddress = new Uri("https://localhost:7214/");
+});
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -14,6 +22,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
