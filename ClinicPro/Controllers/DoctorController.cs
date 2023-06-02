@@ -54,6 +54,7 @@ namespace ClinicPro.Controllers
             return View("Create", doctor);
         }
 
+
         public IActionResult Details(int id)
         {
             var httpClient = _httpClientFactory.CreateClient("ClinicProApi");

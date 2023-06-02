@@ -1,6 +1,5 @@
 ﻿using ClinicProWebApi.Models;
 using ClinicProWebApi.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClinicProWebApi.Controllers
@@ -89,7 +88,7 @@ namespace ClinicProWebApi.Controllers
 
 
         [HttpPut]
-        public IActionResult UpdateDepartment(int Id, [FromBody] Department department)
+        public IActionResult UpdateDepartment( [FromBody] Department department)
         {
 
             var d = _unitOfWork.DepartmentRepo.GetById(department.DepartmentId);
@@ -115,5 +114,18 @@ namespace ClinicProWebApi.Controllers
             _unitOfWork.Commit();
             return Ok(d);
         }
+
+        [HttpGet("highest-patient")]
+        public IActionResult GetDepartmentWithHighestPatient()
+        {
+            var departmentWithHighestPatient = _unitOfWork.DepartmentRepo.DepartmentsWithHighestPatient();
+            if (departmentWithHighestPatient == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(departmentWithHighestPatient);
+        }
     }
 }
+

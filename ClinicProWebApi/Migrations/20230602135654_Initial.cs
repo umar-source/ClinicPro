@@ -81,10 +81,10 @@ namespace ClinicProWebApi.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PatientName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     AppointmentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DoctorId = table.Column<int>(type: "int", nullable: false),
                     AppointmentType = table.Column<int>(type: "int", nullable: false),
                     Reason = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
-                    PatientId = table.Column<int>(type: "int", nullable: true)
+                    PatientId = table.Column<int>(type: "int", nullable: true),
+                    DoctorId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

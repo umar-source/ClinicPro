@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ClinicProWebApi.Models
 {
@@ -40,7 +41,11 @@ namespace ClinicProWebApi.Models
         [Display(Name = "Insurance Provider")]
         public string? InsuranceProvider { get; set; }
 
+
+        // [JsonIgnore] prevents a property from being Serialized & Deserialized
+        [JsonIgnore] 
         public virtual Department? Department { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Appointment>? Appointments { get; set; }
     }
 }

@@ -26,7 +26,6 @@ namespace ClinicPro.Controllers
             {
                 return View("Error");
             }
-
         }
 
 
@@ -52,6 +51,8 @@ namespace ClinicPro.Controllers
             return View("Create", department);
         }
 
+
+
         public IActionResult Details(int id)
         {
             var httpClient = _httpClientFactory.CreateClient("ClinicProApi");
@@ -74,7 +75,6 @@ namespace ClinicPro.Controllers
 
             if (httpResponse.IsSuccessStatusCode)
             {
-
                 return RedirectToAction("Index");
             }
             else
@@ -82,7 +82,6 @@ namespace ClinicPro.Controllers
                 return View("Error");
             }
         }
-
 
 
         public IActionResult Edit(int id)
@@ -100,6 +99,7 @@ namespace ClinicPro.Controllers
                 return View("Error");
             }
         }
+
 
 
         [HttpPost]
@@ -122,7 +122,8 @@ namespace ClinicPro.Controllers
                 }
             }
 
-            return View("Edit", appointment);
+            return View("Edit", appointment);        
         }
+
     }
 }

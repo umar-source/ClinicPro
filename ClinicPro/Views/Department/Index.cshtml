@@ -2,7 +2,7 @@
 
 
 <div>
-    <a asp-action="Create" class="btn btn-secondary   text-white">Create Doctor</a>
+    <a asp-action="Create" class="btn btn-secondary   text-white">Create Department</a>
 </div>
 
 
@@ -29,10 +29,10 @@
                     <a asp-action="Edit" asp-route-id="@doctor.DepartmentId" class="btn btn-info">Edit</a>
                 </td>
                 <td>
-                    <a href="@Url.Action("Delete", "Doctor" , new { id=doctor.DepartmentId })" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this doctor?')">Delete</a>
+                    <a href="@Url.Action("Delete", "Department" , new { id = doctor.DepartmentId })" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this doctor?')">Delete</a>
                 </td>
                 <td>
-                    <a href="@Url.Action("Details", "Doctor", new { id = doctor.DepartmentId })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Details", "Department", new { id = doctor.DepartmentId })" class="btn btn-info">Details</a>
                 </td>
             </tr>
         }

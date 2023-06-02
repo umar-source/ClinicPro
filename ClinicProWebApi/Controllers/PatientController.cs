@@ -28,7 +28,7 @@ namespace ClinicProWebApi.Controllers
                 }
                 return Ok(patient);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
@@ -98,7 +98,7 @@ namespace ClinicProWebApi.Controllers
 
 
         [HttpPut]
-        public IActionResult UpdatePatient( [FromBody] Patient patient)
+        public IActionResult UpdatePatient([FromBody] Patient patient)
         {
 
             var p = _unitOfWork.PatientRepo.GetById(patient.PatientId);
@@ -126,5 +126,8 @@ namespace ClinicProWebApi.Controllers
             _unitOfWork.Commit();
             return Ok(p);
         }
+
+
+  
     }
 }

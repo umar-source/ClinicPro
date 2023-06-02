@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ClinicProWebApi.Models
 {
@@ -16,12 +17,9 @@ namespace ClinicProWebApi.Models
         [DataType(DataType.DateTime)]
         public DateTime AppointmentDate { get; set; }
 
-        [Display(Name = "Doctor")]
-        [Required(ErrorMessage = "The {0} field is required.")]
-        public int DoctorId { get; set; }
-
+     
         [Display(Name = "Appointment Type")]
-        [Required(ErrorMessage = "The {0} field is required.")]
+        [Required]
         public AppointmentType AppointmentType { get; set; }
 
         [Display(Name = "Reason")]
@@ -30,7 +28,10 @@ namespace ClinicProWebApi.Models
 
         public virtual Patient? Patient { get; set; }
 
-
+        [Display(Name = "Doctor")]
+        [Required]
+        public int DoctorId { get; set; }
+      
         public virtual Doctor? Doctor { get; set; }
     }
     public enum AppointmentType

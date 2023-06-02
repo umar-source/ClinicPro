@@ -1,6 +1,7 @@
 ﻿using ClinicProWebApi.DAL;
 using ClinicProWebApi.Models;
 using ClinicProWebApi.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace ClinicProWebApi.Repositories.Implementations
 {
@@ -9,5 +10,8 @@ namespace ClinicProWebApi.Repositories.Implementations
         public PatientRepository(ClinicProContext dbContext) : base(dbContext)
         {
         }
+
+
+      
     }
 }

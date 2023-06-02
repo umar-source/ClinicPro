@@ -115,5 +115,11 @@ namespace ClinicProWebApi.Controllers
             _unitOfWork.Commit();
             return Ok(p);
         }
+
+        [HttpGet("DoctorAppointments")]
+        public IActionResult DoctorsWithAppointments()
+        {
+            return Ok(_unitOfWork.DoctorRepo.DoctortsWithAppointments());
+        }
     }
 }

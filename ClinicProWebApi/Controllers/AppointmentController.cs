@@ -48,7 +48,7 @@ namespace ClinicProWebApi.Controllers
             }
             _unitOfWork.AppointmentRepo.Add(appointment);
             _unitOfWork.Commit();
-            CreatedAtAction("GetDepartment", new { id = appointment.AppointmentId }, appointment);
+            CreatedAtAction("GetAppointment", new { id = appointment.AppointmentId }, appointment);
 
             return Ok(appointment);
         }

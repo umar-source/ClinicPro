@@ -29,7 +29,7 @@ namespace ClinicPro.Controllers
             if (ModelState.IsValid)
             {
                 var httpClient = _httpClientFactory.CreateClient("ClinicProApi");
-                var httpResponse = httpClient.PostAsJsonAsync("api/Patient/CreatePatient", patient).Result;
+                var httpResponse = httpClient.PostAsJsonAsync("api/Patient", patient).Result;
 
                 if (httpResponse.IsSuccessStatusCode)
                 {

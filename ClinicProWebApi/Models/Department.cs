@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using System.Xml.Linq;
 
 namespace ClinicProWebApi.Models
@@ -31,7 +32,7 @@ namespace ClinicProWebApi.Models
         [EmailAddress(ErrorMessage = "The {0} field is not a valid email address.")]
         public string? Email { get; set; }
 
-
+        [JsonIgnore]
         public virtual ICollection<Patient>? Patients { get; set; }
     }
 }

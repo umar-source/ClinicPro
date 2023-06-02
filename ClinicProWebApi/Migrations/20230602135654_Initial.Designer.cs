@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicProWebApi.Migrations
 {
     [DbContext(typeof(ClinicProContext))]
-    [Migration("20230601151807_Initial")]
+    [Migration("20230602135654_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

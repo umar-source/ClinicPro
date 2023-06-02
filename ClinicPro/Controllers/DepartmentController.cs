@@ -55,9 +55,10 @@ namespace ClinicPro.Controllers
         {
             var httpClient = _httpClientFactory.CreateClient("ClinicProApi");
             var httpResponse = httpClient.GetAsync($"api/Department/{id}").Result;
+
             if (httpResponse.IsSuccessStatusCode)
             {
-                var doctor = httpResponse.Content.ReadAsAsync<DoctorViewModel>().Result;
+                var doctor = httpResponse.Content.ReadAsAsync<DepartmentViewModel>().Result;
                 return View(doctor);
             }
             else
